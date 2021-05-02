@@ -9,4 +9,19 @@ If domain has entry like *.google.com then every DNS query will be pointing to s
 
 ## USAGE
 
-todo
+usage: main.py [-h] -d DOMAIN -w WORDLIST [-o OUTPUT] [-s] [-c] [-t TIMEDELAY]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -o OUTPUT, --output OUTPUT
+                        Path to output file for storing results
+  -s, --skip            Skip duplicates (like same IP as wildcard one)
+  -c, --combine         Combine words from dictionary for results like qa.ftp.domain.com
+  -t TIMEDELAY, --timedelay TIMEDELAY
+                        Set delay in seconds for limiting reqesting
+
+Required arguments:
+  -d DOMAIN, --domain DOMAIN
+                        Target domain to scan
+  -w WORDLIST, --wordlist WORDLIST
+                        Absolute path to dictionary
