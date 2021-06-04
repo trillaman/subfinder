@@ -15,7 +15,6 @@ optional arguments:\
   -h, --help            show this help message and exit\
   -o OUTPUT, --output OUTPUT       Path to output file for storing results\
   -s, --skip            Skip duplicates (like same IP as wildcard one)\
-  -c, --combine         Combine words from dictionary for results like qa.ftp.domain.com\
   -t TIMEDELAY, --timedelay TIMEDELAY   Set delay in seconds for limiting reqesting\
 \
 Required arguments:\
