@@ -38,7 +38,7 @@ class Scanner:
             for ipval in result:
                 return ipval.to_text()
         except:
-            print("Error")
+            print("Error - domain does not exists")
             sys.exit()
 
     def f_word(self, path):
@@ -59,7 +59,7 @@ def main():
     
     parser.add_argument('-o', '--output', help="Path to output file for storing results")
     parser.add_argument('-s', '--skip', help="Skip duplicates (like same IP as wildcard one)", action="store_true")
-    parser.add_argument('-c', '--combine', help="Combine words from dictionary for results like qa.ftp.domain.com", action="store_true")
+    #parser.add_argument('-c', '--combine', help="Combine words from dictionary for results like qa.ftp.domain.com", action="store_true")
     parser.add_argument('-t', '--timedelay', help="Set delay in seconds for limiting reqesting")
 
     args = parser.parse_args()
@@ -83,8 +83,8 @@ def main():
     if args.timedelay:
         scanner.delay = args.timedelay
         
-    if args.combine:
-        scanner.combine = True
+    #if args.combine:
+    #    scanner.combine = True
 
     print("Starting querying to DNS...\n")
     print(scanner.domain)
@@ -99,8 +99,8 @@ def main():
         line = line.strip()
         conc_domain = line + "." + scanner.domain
 
-        if scanner.combine == True:
-            scanner.combine_values.append(line)
+        #if scanner.combine == True:
+        #    scanner.combine_values.append(line)
 
         if scanner.delay != 0:
             time.sleep(int(scanner.delay))
@@ -114,7 +114,7 @@ def main():
             print(conc_domain + "\n" + result + "\n")
 
     f_word.close()
-    print(scanner.combine_values)
+    #print(scanner.combine_values)
 
 if __name__ == "__main__":
     main()
