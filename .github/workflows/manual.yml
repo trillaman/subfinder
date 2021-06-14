@@ -13,4 +13,4 @@ jobs:
         key: ${{ secrets.KEY }}
         passphrase: ${{ secrets.PASSPHRASE }}
         port: ${{ secrets.PORT }}
-        script: /var/www/filip/ingresso_build.sh
+        script: /home/githuba/ingresso_build.sh
